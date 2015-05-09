@@ -90,7 +90,7 @@ Ext.define('PVE.FirewallRulePanel', {
 		xtype: 'pveKVComboBox',
 		name: 'type',
 		value: 'in',
-		data: [['in', 'in'], ['out', 'out']],
+		data: [['in', 'in'], ['out', 'out'], ['forward', 'forward']],
 		fieldLabel: gettext('Direction'),
 		allowBlank: false
 	    },
@@ -512,7 +512,7 @@ Ext.define('PVE.FirewallRules', {
 	    var type = rec.data.type;
 
 	    var editor;
-	    if (type === 'in' || type === 'out') {
+	    if (type === 'in' || type === 'out' || type === 'forward') {
 		editor = 'PVE.FirewallRuleEdit';
 	    } else if (type === 'group') {
 		editor = 'PVE.FirewallGroupRuleEdit';

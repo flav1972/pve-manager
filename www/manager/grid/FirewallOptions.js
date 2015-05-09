@@ -111,6 +111,7 @@ Ext.define('PVE.FirewallOptions', {
 	    add_integer_row('nf_conntrack_tcp_timeout_established', 
 			    'nf_conntrack_tcp_timeout_established', 250, 7875);
 	    add_log_row('log_level_in');
+	    add_log_row('log_level_forward');
 	    add_log_row('log_level_out');
 	    add_log_row('tcp_flags_log_level', 120);
 	    add_log_row('smurf_log_level');
@@ -137,6 +138,22 @@ Ext.define('PVE.FirewallOptions', {
 			name: 'policy_in',
 			value: 'DROP',
 			fieldLabel: gettext('Input Policy')
+		    }
+		}
+	    };
+
+	    rows.policy_forward = {
+		header: gettext('Forward Policy'),
+		required: true,
+		defaultValue: 'ACCEPT',
+		editor: {
+		    xtype: 'pveWindowEdit',
+		    subject: gettext('Forward Policy'),
+		    items: {
+			xtype: 'pveFirewallPolicySelector',
+			name: 'policy_forward',
+			value: 'ACCEPT',
+			fieldLabel: gettext('Forward Policy')
 		    }
 		}
 	    };
