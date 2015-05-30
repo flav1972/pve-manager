@@ -1,3 +1,9 @@
+pve-manager (3.4-6+enh1) unstable; urgency=low
+
+  *  Added Firewall Forward rules and policy (needs enhanced Firewall API)
+
+ -- <flav1972@users.noreply.github.com>  Sat, 30 May 09:07:10 +0200
+
 pve-manager (3.4-6) unstable; urgency=low
 
   *  pveceph: use git.ceph.com for key download url
